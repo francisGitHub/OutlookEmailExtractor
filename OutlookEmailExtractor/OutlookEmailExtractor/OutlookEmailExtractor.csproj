@@ -81,7 +81,6 @@
     <Compile Include="Model\IndexFormat.cs" />
     <Compile Include="Model\Email.cs" />
     <Compile Include="Services\IExtractEmails.cs" />
-    <Compile Include="Services\Impl\EmailAttachmentDownloadService.cs" />
     <Compile Include="Services\Impl\EmailExtractionService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
