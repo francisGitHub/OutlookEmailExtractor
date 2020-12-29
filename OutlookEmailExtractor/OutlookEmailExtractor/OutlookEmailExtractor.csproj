@@ -80,7 +80,6 @@
     <Compile Include="Model\CsvRow.cs" />
     <Compile Include="Model\IndexFormat.cs" />
     <Compile Include="Model\Email.cs" />
-    <Compile Include="Services\IDownloadAttachments.cs" />
     <Compile Include="Services\IExtractEmails.cs" />
     <Compile Include="Services\Impl\EmailAttachmentDownloadService.cs" />
     <Compile Include="Services\Impl\EmailExtractionService.cs" />
