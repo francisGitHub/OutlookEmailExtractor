@@ -46,8 +46,6 @@ namespace OutlookEmailExtractor
                     
                     var emailIndex = indexFormat.GetIndexNumber(count, 0);
 
-                    Console.WriteLine($"{emailIndex}             EMAIL - {item.Subject}             {item.ReceivedDateTime}");
-
                     var emailSavePath = Path.Combine(SaveDirectory, $"{emailIndex}.msg");
                     item.MailItem.SaveAs($"{emailSavePath}", OlSaveAsType.olMSG);
 
@@ -55,7 +53,8 @@ namespace OutlookEmailExtractor
                     {
                         Index = emailIndex,
                         Description = item.Subject,
-                        Date = item.ReceivedDateTime.ToShortDateString()
+                        Date = item.ReceivedDateTime.ToShortDateString(),
+                        Time = item.ReceivedDateTime.ToString("HH:mm").PadLeft(4,'0')
                     };
 
                     csvRows.Add(csvEmailRowItem);
@@ -68,8 +67,6 @@ namespace OutlookEmailExtractor
 
                             attachmentIdentifier++;
                             var attachmentIndex = indexFormat.GetIndexNumber(count, attachmentIdentifier);
-
-                            Console.WriteLine($"{attachmentIndex}             {attachment.FileName}");
 
                             var attachmentSavePath =
                                 Path.Combine(SaveDirectory, $"{attachmentIndex} {attachment.FileName}");
